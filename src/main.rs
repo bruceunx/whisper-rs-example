@@ -6,7 +6,7 @@ use std::thread;
 use whisper_rs::whisper_rs_sys;
 use whisper_rs::{FullParams, SamplingStrategy, WhisperContext, WhisperContextParameters};
 
-// whisper-rs example, but the ggml-metal support is not valid
+// whisper-rs example, but the ggml-metal support is not valid? compile manully
 
 struct SegmentMessage {
     t0: i64,
@@ -75,7 +75,7 @@ fn main() {
         params.set_new_segment_callback_user_data(sender_ptr);
     }
 
-    let wav_path = Path::new("/Users/bruce/Library/Caches/llama-rust-desktop/wav-cache/temp.wav");
+    let wav_path = Path::new("/Users/bruce/python/llm/whisper/output.wav");
 
     let audio_data = read_wav_to_f32(wav_path).expect("failed to read audio data");
 
